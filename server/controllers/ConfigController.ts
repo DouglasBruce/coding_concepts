@@ -39,7 +39,7 @@ export class ConfigController {
 
     private simpleGameLayout(): object {
         const colours = ["red", "blue", "green"];
-        const coloursMaxIndex = 2;
+        const coloursMaxIndex = colours.length;
         const primaryIndex = this.randomNumber(0, coloursMaxIndex);
         let secondaryIndex = 0;
         

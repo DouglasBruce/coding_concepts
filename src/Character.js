@@ -12,37 +12,59 @@ class Character extends Component{
               y: 1
           },
           positionOffset:{
-              top: -459,
+              top: -408,
               left: -153
           }
         };
     }
     
     moveForward(){
-        this.state.position.y++;
-        this.state.positionOffset.top += 51;
-        this.setState(this.state);
+        if (this.state.position.y != 8) {
+            this.state.position.y++;
+            this.state.positionOffset.top += 51;
+            this.setState(this.state);
+        } else {
+            this.resetPos();
+        }
     }
 
     moveBack(){
-        this.state.position.y--;
-        this.state.positionOffset.top -= 51;
-        this.setState(this.state);
+        if (this.state.position.y != 1) {
+            this.state.position.y--;
+            this.state.positionOffset.top -= 51;
+            this.setState(this.state);
+        } else {
+            this.resetPos();
+        }
     }
 
     moveLeft(){
-        this.state.position.x--;
-        this.state.positionOffset.left -= 51;
-        this.setState(this.state);
+        if (this.state.position.x != 1) {
+            this.state.position.x--;
+            this.state.positionOffset.left -= 51;
+            this.setState(this.state);
+        } else {
+            this.resetPos();
+        }
     }
 
     moveRight(){
-        this.state.position.x++;
-        this.state.positionOffset.left += 51;
-        this.setState(this.state);
+        if (this.state.position.x != 8) {
+            this.state.position.x++;
+            this.state.positionOffset.left += 51;
+            this.setState(this.state);
+        } else {
+            this.resetPos();
+        }
     }
 
-
+    resetPos() {
+        this.state.position.y = 1;
+        this.state.position.x = 1;
+        this.state.positionOffset.top = -408;
+        this.state.positionOffset.left = -153;
+        this.setState(this.state);
+    }
 
     render(){
         var style = {
