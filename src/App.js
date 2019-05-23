@@ -55,7 +55,7 @@ class App extends Component {
             <ChessBoard id="chessBoard" config={this.state.boardConfig} ref={this.boardRef} characterRef={this.characterRef} />
             <DirectionControls characterRef={this.characterRef} />
           </div>
-          
+          <div><h4>{this.state.boardConfig.rules}</h4></div>
         </main>
       );
     }
