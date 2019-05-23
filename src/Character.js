@@ -27,8 +27,15 @@ class Character extends Component{
                 if(this.state.position.x == this.dotsToCollect[i].position.x && this.state.position.y == this.dotsToCollect[i].position.y) {
                     document.getElementById(this.dotsToCollect[i].index).style.visibility = "hidden";
                     this.dotsToCollect.splice(i, 1);
+                    this.checkIfPlayerHasWon();
                 }
             }
+        }
+    }
+
+    checkIfPlayerHasWon() {
+        if(this.dotsToCollect.length <= 0) {
+            console.log("Congrats! You collected all the coins in " + this.state.moves + " moves.");
         }
     }
     
